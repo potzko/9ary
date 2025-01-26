@@ -14,7 +14,7 @@ class Interpreter:
         self.functions = {}
         self.grand_swaps = 9
 
-    def input(self, expression):
+    def input_exp(self, expression):
         tokens = tokenize(expression)
         return self.calc(tokenizer(tokens))
 
