@@ -125,3 +125,8 @@ a = 9x9 + 9x900 + 1x1 + 9x9 // 740
 b = 9x900 + 9x900 + 1x1 + 9x9 + 1x1 // 9461
 1x1 + 1x1 // 2
 a | b // 0740 | 9461 with on bit = 9 -> 9740 
+
+
+note, I have been using comments with the // ....  convention.
+this is not a part of the language as your code should be divinely inspired and fully understandable without comments
+as such I have chosen to remove them
