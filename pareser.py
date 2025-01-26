@@ -16,7 +16,7 @@ class Interpreter:
 
     def input(self, expression):
         tokens = tokenize(expression)
-        return self.line(tokenizer(tokens))
+        return self.calc(tokenizer(tokens))
 
     def rebinary(self, num):
         self.grand_swaps += 1
@@ -26,7 +26,7 @@ class Interpreter:
         ret = ret.replace("nine", "9")
         return int(ret)
     
-    def line(self, tok):
+    def calc(self, tok):
         if tok.tokens == ['eof']:
             return ''
         if tok.peek() == 'fn':
@@ -224,8 +224,8 @@ def main():
         lines = code.read().strip().split("\n")
     for line in lines:
         t = tokenizer(tokenize(line))
-        print(inter.line(t))
+        print(inter.calc(t))
 
 if __name__ == "__main__":
     main()
-
+ 
