@@ -10,7 +10,8 @@ Just a recent pipe dream and am wondering what you programmers think/feel about 
 
 GLP companion thread.
 
-r/ProgrammingLanguages thread. Edit, shut down!!! Cant tell you how much I get banned on sub reddits, is this sub the Only One free of rules yet has absolutely no problems??? Wonder why that is..." - Donald Knuth, 2024
+r/ProgrammingLanguages thread. Edit, shut down!!! Cant tell you how much I get banned on sub reddits, is this sub the Only One free of rules yet has absolutely no problems??? Wonder why that is..."  
+- Donald Knuth, 2024
 (on his well known reddit alt, Soloma369)
 
 Introduction
