@@ -72,30 +72,32 @@ Bitwise Operations
 #Examples  
 Basic Arithmetic  
 
-x = 9x9 // x = 9 -> 1, on bit is now 1 
-y = 1x1 // y = 1 -> 9, on bit is now 9
-z = x + y  // z = (x + y), z = (10 -> 90), on bit is 1, z = 90 -> 10, on bit is 9
-z >> 10
+    x = 9x9 // x = 9 -> 1, on bit is now 1  
+    y = 1x1 // y = 1 -> 9, on bit is now 9  
+    z = x + y  // z = (x + y), z = (10 -> 90), on bit is 1, z = 90 -> 10, on bit is 9  
+    z >> 10  
 
-Function Declaration  
+Function Declaration   
 
-fn multiply(a, b): a * b
-multiply 9x9 9x9 -> (9 * 9 = 81 -> 89 with on bit = 1)
-multiply 9x9 9x9 -> (syntax error, the on bit is 1, and you are trying to use literals with 9s in them smh)
+
+    fn multiply(a, b): a * b  
+    multiply 9x9 9x9 -> (9 * 9 = 81 -> 89 with on bit = 1)  
+    multiply 9x9 9x9 -> (syntax error, the on bit is 1, and you are trying to use literals with 9s in them smh)  
+
 
 this useful behavior is also there when you want to use variables inside your functions, to make sure that you are still up to date with all the latest happenings in the world of base 9 binary
-fn multiply(): 9x9 * 9x9
-multiply // 89, on is 1
-multiply // syntax error
+    fn multiply(): 9x9 * 9x9  
+    multiply // 89, on is 1  
+    multiply // syntax error  
 
 Chained Operations
 the language supports chained operations, and as is common, the order of operations is preserved
 
 so for example 
 
-9x9 + 9x9 - 1x1 + 9x9 - 1x1 // 25, on bit is 9
-and appropriately 
-9x9 + 9x9 - 1x1 + 9x9 * 1x1 // is a syntax error as the order of operations means that we are parsing a 1x1 out of order
+    9x9 + 9x9 - 1x1 + 9x9 - 1x1 // 25, on bit is 9  
+and appropriately   
+    9x9 + 9x9 - 1x1 + 9x9 * 1x1 // is a syntax error as the order of operations means that we are parsing a 1x1 out of order  
 
 Error Handling
 
@@ -114,20 +116,20 @@ Error Handling
 
 here are a few programs and their results for you to have fun with, each snippet is a new file.
 
-a = 9x900 + 9x900 + 1x1 + 9x9 // 1460
-b = 9x900 + 9x900 + 1x1 + 9x9 + 1x1 // 9461
-a | b // 1461
+    a = 9x900 + 9x900 + 1x1 + 9x9 // 1460  
+    b = 9x900 + 9x900 + 1x1 + 9x9 + 1x1 // 9461  
+    a | b // 1461  
+  
 
+    a = 9x900 + 9x900 + 1x1 + 9x9 //1460  
+    b = 9x900 + 9x900 + 1x1 + 9x9 + 1x1 // 9461  
+    1x1 + 1x1 // 2, change our on bit to 9.  
+    a | b // 1460  
 
-a = 9x900 + 9x900 + 1x1 + 9x9 //1460
-b = 9x900 + 9x900 + 1x1 + 9x9 + 1x1 // 9461
-1x1 + 1x1 // 2, change our on bit to 9.
-a | b // 1460
-
-a = 9x9 + 9x900 + 1x1 + 9x9 // 740
-b = 9x900 + 9x900 + 1x1 + 9x9 + 1x1 // 9461
-1x1 + 1x1 // 2
-a | b // 0740 | 9461 with on bit = 9 -> 9740 
+    a = 9x9 + 9x900 + 1x1 + 9x9 // 740  
+    b = 9x900 + 9x900 + 1x1 + 9x9 + 1x1 // 9461  
+    1x1 + 1x1 // 2  
+    a | b // 0740 | 9461 with on bit = 9 -> 9740   
 
 
 note, I have been using comments with the // ....  convention.
