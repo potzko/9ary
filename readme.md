@@ -61,21 +61,23 @@ Call a function by its name:
 Arithmetic
 
     Supports +, -, *, /, and % with rebinary adjustments after each operation.
+    ie 14 + 2 = 16, at which point we swap all 1s and 9s
+    therefor: 14 + 2 = 16 -> 96
 
 Bitwise Operations
 
     Use bitwise operators (^, |, &, $) for logical manipulations.
     Behavior is dependent on the current "on" state.
 
-Examples
-Basic Arithmetic
+#Examples  
+Basic Arithmetic  
 
 x = 9x9 // x = 9 -> 1, on bit is now 1 
 y = 1x1 // y = 1 -> 9, on bit is now 9
 z = x + y  // z = (x + y), z = (10 -> 90), on bit is 1, z = 90 -> 10, on bit is 9
 z >> 10
 
-Function Declaration
+Function Declaration  
 
 fn multiply(a, b): a * b
 multiply 9x9 9x9 -> (9 * 9 = 81 -> 89 with on bit = 1)

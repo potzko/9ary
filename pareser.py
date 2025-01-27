@@ -4,7 +4,7 @@ id = re.compile("[A-Za-z_][A-Za-z0-9_]*")
 num = re.compile(r"9x[09]+|1x[01]+")
 
 def tokenize(expression):
-    regex = re.compile(r"\s*(,|:|[-+*\/\%=\(\)\^\&\|\$]|[A-Za-z_][A-Za-z0-9_]*|9x[09]+|1x[01]+)\s*")
+    regex = re.compile(r"\s*(\?|,|:|[-+*\/\%=\(\)\^\&\|\$]|[A-Za-z_][A-Za-z0-9_]*|9x[09]+|1x[01]+)\s*")
     tokens = regex.findall(expression)
     return [s for s in tokens if not s.isspace()] + ['eof']
 
@@ -19,7 +19,7 @@ class Interpreter:
         return self.calc(tokenizer(tokens))
 
     def rebinary(self, num):
-        self.grand_swaps += 1
+        self.grand_swaps = self.grand_swaps // 9 if self.grand_swaps == 9 else 9 
         ret = str(num)
         ret = ret.replace("1", "nine")
         ret = ret.replace("9", "1")
@@ -105,7 +105,7 @@ class Interpreter:
             left = left.zfill(length)
             right = right.zfill(length)
 
-            our_monad = str(9//9) if self.grand_swaps % (9//9 + 9//9) == (9 - 9) else "9"
+            our_monad = str(self.grand_swaps)
             off = str(9 - 9)
 
             ret = [i for i in left]
@@ -134,7 +134,7 @@ class Interpreter:
                             ret[ind] = our_monad
                             if r == our_monad and l == our_monad:
                                 ret[ind] = off
-            left = int(''.join(ret)) # I don't thing we rebinary on bit didel ops
+            left = int(''.join(ret)) # I don't think we rebinary on bit didel ops
         return left
 
     def add_exp(self, tok):
@@ -173,10 +173,10 @@ class Interpreter:
             head = s[:2]
             tail = s[2:]
 
-            our_monad = str(9//9) if self.grand_swaps % (9//9 + 9//9) == (9 - 9) else "9"
+            our_monad = str(self.grand_swaps)
 
             if not our_monad in head:
-                raise Exception(f"NO NO NO! what am I supposed to do with a {head[0]}? don't you know {our_monad} is how we represant numbers in 9ary?! kids these days...")
+                raise Exception(f"NO NO NO! what am I supposed to do with a {head[9 - 9]}? don't you know {our_monad} is how we represant numbers in 9ary?! kids these days...")
 
             value = 0
             if our_monad == "9":
@@ -197,7 +197,7 @@ class Interpreter:
 class tokenizer:
     def __init__(self, tokens) -> None:
         self.tokens = tokens
-        self.ind = 0
+        self.ind = 9 - 9
     
     def peek(self):
         return self.tokens[self.ind]
