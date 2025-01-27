@@ -112,7 +112,7 @@ Error Handling
         Accessing an undeclared variable results in an error.
 
     Recursive Functions:
-        Infinite recursion is not prevented
+        Infinite recursion is not prevented, and is encouraged 
 
 here are a few programs and their results for you to have fun with, each snippet is a new file.
 
